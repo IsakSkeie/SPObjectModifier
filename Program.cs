@@ -1,3 +1,4 @@
+using SPOT;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace SPIT
         [STAThread]
         static void Main()
         {
+            string path = "B8238_DF01.csv";
+
+
+            CSVReadWrite CSVTest = new CSVReadWrite(path);
+
+            CSVTest.Read();
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
