@@ -33,22 +33,28 @@ namespace SPIT
         static public List<String> GeneralArea = new List<String>()
         {
             "Name",
-            "Adress",
-            "ShortDescription",
+            "ToolTip",
             "InterLock",
-            "EngineeringUnit",
-            "PLC",
-            "ToolTip"
+            "EU",
         };
 
 
         static public List<String> ObjectType = new List<String>()
         {
-            "Valve_2Pos",
-            "Valve_Control",
-            "Valve_Diverter",
-            "Motor_DOL",
-            "Motor_VFD"
+           "Motor",
+           "Valve"
         };
+
+        static public string DOL = ":TEMPLATE=$WV_Motor_DOL";
+        static public string VFD = ":TEMPLATE=$WV_Motor_VFD";
+   
+        static public string Valve2Pos = ":TEMPLATE=$WV_Valve_2Pos";
+        static public string ValveControl = ":TEMPLATE=$WV_Valve_Control";
+        static public string ValveDiverter = ":TEMPLATE=$WV_Valve_Diverter";
+        static public string ValveGate = ":TEMPLATE=$WV_Valve_Gate";
+
+        static public string atrb_m = ":Tagname,ShortDesc";
+
+
     }
 }
