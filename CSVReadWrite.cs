@@ -12,7 +12,7 @@ namespace SPOT
         private string FilePath = "";
         private int Line;
         public List<String> Headers = new List<String>();
-
+        public List<string[]> Objects = new List<string[]>();
 
         public CSVReadWrite(string _FilePath)
         {
@@ -25,7 +25,7 @@ namespace SPOT
         {
             using (var reader = new StreamReader(@"C:\Users\isak.skeie\source\repos\SPOT\B8238_DF01.csv"))
             {
-                List<string[]> Objects = new List<string[]>();
+                
                 
                 while (!reader.EndOfStream)
                 {

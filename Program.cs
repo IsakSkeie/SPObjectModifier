@@ -24,7 +24,31 @@ namespace SPIT
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Area());
         }
+    }
+
+    static public class initVar
+    {
+        static public List<String> GeneralArea = new List<String>()
+        {
+            "Name",
+            "Adress",
+            "ShortDescription",
+            "InterLock",
+            "EngineeringUnit",
+            "PLC",
+            "ToolTip"
+        };
+
+
+        static public List<String> ObjectType = new List<String>()
+        {
+            "Valve_2Pos",
+            "Valve_Control",
+            "Valve_Diverter",
+            "Motor_DOL",
+            "Motor_VFD"
+        };
     }
 }
