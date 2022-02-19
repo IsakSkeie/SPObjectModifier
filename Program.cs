@@ -30,6 +30,8 @@ namespace SPIT
 
     static public class initVar
     {
+        public static int nAtrb = 2;
+
         static public List<String> GeneralArea = new List<String>()
         {
             "Name",
@@ -45,8 +47,8 @@ namespace SPIT
            "Valve"
         };
 
-        static public string DOL = ":TEMPLATE=$WV_Motor_DOL";
-        static public string VFD = ":TEMPLATE=$WV_Motor_VFD";
+        static public string DOL = ":TEMPLATE=$WV_Motor_DOL,ShortDesc";
+        static public string VFD = ":TEMPLATE=$WV_Motor_VFD,ShortDesc";
    
         static public string Valve2Pos = ":TEMPLATE=$WV_Valve_2Pos";
         static public string ValveControl = ":TEMPLATE=$WV_Valve_Control";
@@ -55,6 +57,18 @@ namespace SPIT
 
         static public string atrb_m = ":Tagname,ShortDesc";
 
-
     }
+
+    public class MotorData
+    {
+       public string[] atributes = new string[initVar.nAtrb];
+       
+       public string StringCreate()
+        {
+            return String.Join(",", atributes);    
+        }
+        
+    }
+        
+
 }

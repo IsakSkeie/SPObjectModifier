@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SPIT;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +12,12 @@ namespace SPOT
     {
         public List<String> Objects = new List<String>();
         public string ObjectDisp;
-        public List<String> MotorObj = new List<String>();
+        public List<String> DOL = new List<String>();
+        public List<String> VFD = new List<String>();
         public List<String> ValveObj = new List<String>();
+        public List<String> MotorObj = new List<String>();
+        public List<String> CSV = new List<String>();
+        
 
 
         public string Display()
@@ -24,16 +30,40 @@ namespace SPOT
             return ObjectDisp;
         }
 
-        public void ObjectInput(string Input)
+        public void ObjectInput(string obj, int atrb, string update)
         {
-            if (Input.Contains("MO"))
+            if (obj.Contains("MO"))
             {
-                MotorObj.Add(Input);
+                MotorData input = new MotorData();
+                input.atributes[0] = obj;
+                
+                input.atributes[atrb] = update;
+                Console.WriteLine(input.atributes[0]);
+                Console.WriteLine(input.atributes[atrb]);
+                MotorObj.Add(input.StringCreate());
             }
-            else
+          
+        }
+
+        public void CSVCreate()
+        {
+            CSV.Add(initVar.DOL);
+            foreach(var entry in MotorObj)
             {
-                ValveObj.Add(Input);
+                CSV.Add(entry);
             }
+
+            CSV.Add(initVar.VFD);
+            foreach(var entry in MotorObj)
+            {
+                CSV.Add(entry);
+            }
+            foreach(string line in CSV)
+            {
+                //fix filepath
+                File.AppendAllText(@"C:\Users\isak.skeie\Desktop\SpotOutput\test.csv", line + Environment.NewLine);
+            }
+            
 
         }
 

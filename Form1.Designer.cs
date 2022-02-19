@@ -68,9 +68,10 @@ namespace SPIT
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 15);
+            this.label4.Size = new System.Drawing.Size(78, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Update Atrb";
+            this.label4.Text = "Updated Atrb";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -97,7 +98,6 @@ namespace SPIT
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "New Attribute";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
@@ -116,7 +116,6 @@ namespace SPIT
             this.Attribute.Name = "Attribute";
             this.Attribute.Size = new System.Drawing.Size(100, 23);
             this.Attribute.TabIndex = 2;
-            this.Attribute.Text = "Object";
             this.Attribute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Attribute.TextChanged += new System.EventHandler(this.Attribute_TextChanged);
             // 
@@ -157,6 +156,7 @@ namespace SPIT
             this.GenerateCSV.TabIndex = 3;
             this.GenerateCSV.Text = "GenerateCSV";
             this.GenerateCSV.UseVisualStyleBackColor = true;
+            this.GenerateCSV.Click += new System.EventHandler(this.GenerateCSV_Click);
             // 
             // Output
             // 

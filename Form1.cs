@@ -16,6 +16,7 @@ namespace SPIT
         public UserIO input = new UserIO();
         public string ObjectI;
         public string AtributeI;
+        public int AtributeIndex;
         public string NewAtbr;
     
 
@@ -34,6 +35,8 @@ namespace SPIT
         private void AttributeType_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtributeI = AttributeType.Text;
+            AtributeIndex = AttributeType.SelectedIndex;
+            
         }
 
         public void WinFormSet()
@@ -67,11 +70,13 @@ namespace SPIT
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            ObjectI += ":" + AtributeI + "->" + NewAtbr + "\r\n";
-
             input.Objects.Add(ObjectI);
             UserInput.Text = input.Display();
+
+            //Adds input to list of csv string
+            input.ObjectInput(ObjectI, AtributeIndex, NewAtbr);
+            ObjectI += ":" + AtributeI + "->" + NewAtbr + "\r\n";
+            
 
 
         }
@@ -84,6 +89,16 @@ namespace SPIT
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             NewAtbr = textBox2.Text;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerateCSV_Click(object sender, EventArgs e)
+        {
+            input.CSVCreate();
         }
     }
     
