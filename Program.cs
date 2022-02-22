@@ -69,6 +69,17 @@ namespace SPIT
         }
         
     }
-        
+
+    public class ValveData
+    {
+        public string[] atributes = new string[initVar.nAtrb];
+
+        public string StringCreate()
+        {
+            return String.Join(",", atributes);
+        }
+
+    }
+
 
 }

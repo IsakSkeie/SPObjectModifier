@@ -42,6 +42,13 @@ namespace SPOT
                 Console.WriteLine(input.atributes[atrb]);
                 MotorObj.Add(input.StringCreate());
             }
+            else if ( atrb == 3)
+            {
+                
+            }
+                    
+
+            
           
         }
 
@@ -61,7 +68,7 @@ namespace SPOT
             foreach(string line in CSV)
             {
                 //fix filepath
-                File.AppendAllText(@"C:\Users\isak.skeie\Desktop\SpotOutput\test.csv", line + Environment.NewLine);
+                File.AppendAllText(@"C:\EU.csv", line + Environment.NewLine);
             }
             
 
