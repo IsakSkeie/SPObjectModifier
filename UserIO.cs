@@ -32,47 +32,14 @@ namespace SPOT
 
         public void ObjectInput(string obj, int atrb, string update)
         {
-            if (obj.Contains("MO"))
-            {
-                MotorData input = new MotorData();
-                input.atributes[0] = obj;
-                
-                input.atributes[atrb] = update;
-                Console.WriteLine(input.atributes[0]);
-                Console.WriteLine(input.atributes[atrb]);
-                MotorObj.Add(input.StringCreate());
-            }
-            else if ( atrb == 3)
-            {
-                
-            }
+          
                     
 
             
           
         }
 
-        public void CSVCreate()
-        {
-            CSV.Add(initVar.DOL);
-            foreach(var entry in MotorObj)
-            {
-                CSV.Add(entry);
-            }
-
-            CSV.Add(initVar.VFD);
-            foreach(var entry in MotorObj)
-            {
-                CSV.Add(entry);
-            }
-            foreach(string line in CSV)
-            {
-                //fix filepath
-                File.AppendAllText(@"C:\EU.csv", line + Environment.NewLine);
-            }
-            
-
-        }
+    
 
     }
 }

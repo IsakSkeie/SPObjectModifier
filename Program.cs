@@ -18,10 +18,8 @@ namespace SPIT
             //Need to add generic name with datetime
             string path = "B8238_DF01.csv";
 
+            
 
-            CSVReadWrite CSVTest = new CSVReadWrite(path);
-
-            CSVTest.ReadHeader();
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
@@ -32,7 +30,17 @@ namespace SPIT
 
     static public class initVar
     {
-        public static int nAtrb = 2;
+
+        static public List<CSVModel> template = new List<CSVModel>();
+        static initVar()
+        {
+           
+            CSVReadWrite CSVInitRead = new CSVReadWrite();
+
+            CSVInitRead.ReadHeader();
+            template = CSVInitRead.objectTemplates;
+
+        }
 
         static public List<String> GeneralArea = new List<String>()
         {
@@ -43,52 +51,17 @@ namespace SPIT
         };
 
 
-        static public List<String> ObjectType = new List<String>()
-        {
-           "DOL",
-           "VFD",
-           "V2Pos",
-           "V3Pos",
-           "Diverter",
-           "Gate",
-           "XAY",
-           "XBY",
-
-        };
-
-        static public string DOL = ":TEMPLATE=$WV_Motor_DOL,ShortDesc";
-        static public string VFD = ":TEMPLATE=$WV_Motor_VFD,ShortDesc";
-   
-        static public string Valve2Pos = ":TEMPLATE=$WV_Valve_2Pos";
-        static public string ValveControl = ":TEMPLATE=$WV_Valve_Control";
-        static public string ValveDiverter = ":TEMPLATE=$WV_Valve_Diverter";
-        static public string ValveGate = ":TEMPLATE=$WV_Valve_Gate";
-
-        static public string atrb_m = ":Tagname,ShortDesc";
-
-    }
-
-    public class MotorData
-    {
-       public string[] atributes = new string[initVar.nAtrb];
-       
-       public string StringCreate()
-        {
-            return String.Join(",", atributes);    
-        }
+  
         
-    }
-
-    public class ValveData
-    {
-        public string[] atributes = new string[initVar.nAtrb];
-
-        public string StringCreate()
+        static public void headers()
         {
-            return String.Join(",", atributes);
+            
         }
 
+
+
     }
+
 
 
 }

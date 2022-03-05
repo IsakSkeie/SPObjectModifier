@@ -42,7 +42,7 @@ namespace SPIT
         public void WinFormSet()
         {
             AttributeType.Text = "Attribute";
-            
+            ObjecType.Text = "Template";
             
             //setting comboboxes
             foreach (string opt in initVar.GeneralArea)
@@ -50,7 +50,11 @@ namespace SPIT
                 AttributeType.Items.Add(opt);
             }
 
-            //foreach(string obj in )
+            foreach(CSVModel obj in initVar.template)
+            {
+                string template = obj.type.Substring(14);
+                ObjecType.Items.Add(template);
+            }
             
         }
 
@@ -99,7 +103,7 @@ namespace SPIT
 
         private void GenerateCSV_Click(object sender, EventArgs e)
         {
-            input.CSVCreate();
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

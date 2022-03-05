@@ -10,6 +10,12 @@ namespace SPOT
     {
         public string type = "";
         public List<string> Headers = new List<String>();
-        
     }
+
+    public static class CSVData
+    {
+
+    }
+
+
 }

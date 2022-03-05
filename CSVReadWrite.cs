@@ -11,13 +11,12 @@ namespace SPOT
     {
         private string FilePath = "";
 
-        List<CSVModel> objectTemplates = new List<CSVModel>();
-        
-        public List<string[]> Objects = new List<string[]>();
+        public List<CSVModel> objectTemplates = new List<CSVModel>();
+      
 
-        public CSVReadWrite(string _FilePath)
+        public CSVReadWrite()
         {
-            FilePath = _FilePath;
+            
             
         }
 
@@ -53,6 +52,7 @@ namespace SPOT
                         {
 
                             objectTemplates[objectTemplates.Count-1].type = values[0];
+                            Console.WriteLine(values[0]);
                         }
                     }
 
