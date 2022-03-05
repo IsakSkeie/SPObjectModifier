@@ -31,8 +31,9 @@ namespace SPIT
     static public class initVar
     {
         //Need to add these to XML config file
-        static private string Interlock = "Interlock#Masked.Description";
-        static private string extFault = "ExternalFault#.Description";
+        static private string Interlock = "Interlock0#Masked.Description";
+        static private string extFault = "ExternalFault0#.Description";
+        static private int InterN = 8;
         static public List<CSVModel> template = new List<CSVModel>();
         static initVar()
         {
@@ -49,15 +50,45 @@ namespace SPIT
             "Name",
             "ToolTip",
             "InterLock",
+            "Ext Fault",
             "EU",
         };
 
-        static public List<string> InterAndExt()
+        static public List<string> AtrbInterlock()
         {
-        
+            
+            List<string> InterlockList = new List<string>();
+            
+            for(int i = 0; i < InterN; i++)
+            {
+                string InterlockN = Interlock.Replace("#", i.ToString());
+                //need to fix hardcoded 0
+                for(int n = 0; n < initVar.template[0].Headers.Count; n++)
+                {
+                    if (initVar.template[0].Headers[n] == InterlockN)
+                    { InterlockList.Add(InterlockN);}
+                }
+            }
+            return InterlockList;
+        }
+        static public List<string> AtrbExtFault()
+        {
+            List<string> ExtFaultList = new List<string>();
+            
+            for (int i = 0; i < InterN; i++)
+            {
+                string ExtFaultN = extFault.Replace("#", i.ToString());
+                //need to fix hardcoded 0
+                for (int n = 0; n < initVar.template[0].Headers.Count; n++)
+                {
+                    if (initVar.template[0].Headers[n] == ExtFaultN)
+                    { ExtFaultList.Add(ExtFaultN); }
+                }
+
+            }
+            return ExtFaultList;
         }
 
-        
 
     }
 

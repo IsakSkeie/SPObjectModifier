@@ -12,18 +12,32 @@ namespace SPOT
         public string type = "";
         public List<string> Headers = new List<String>();
     }
-    public class Object
+    public class ObjectUpdate
     {
+        public string template;
+        public List<string> header;
         public List<string> Attributes = new List<string>();
 
-        public Object(int type, string name)
+        public void Interlock(int type, string name, int N)
         {
-            Attributes.Add(name);
-            for(int i = 0; i < initVar.template[type].Headers.Count(); i++)
+            template = initVar.template[type].type;
+            header = initVar.template[type].Headers;
+            Attributes.Add(name + ',');
+            //Fix this hardcoded number
+            for(int i = 0; i < 8; i++)
+                if(i == N)
+                {
+                    Attributes.Add(initVar.AtrbInterlock()[N]);
+                }
+            foreach(var atrb in Attributes)
             {
-                Attributes.Add("");
+            Console.WriteLine(atrb);
             }
+            
+
         }
     }
+
+    
 
 }
