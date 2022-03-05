@@ -15,12 +15,14 @@ namespace SPIT
         [STAThread]
         static void Main()
         {
+            //Need to add generic name with datetime
             string path = "B8238_DF01.csv";
 
 
             CSVReadWrite CSVTest = new CSVReadWrite(path);
 
-            CSVTest.Read();
+            CSVTest.ReadHeader();
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -43,8 +45,15 @@ namespace SPIT
 
         static public List<String> ObjectType = new List<String>()
         {
-           "Motor",
-           "Valve"
+           "DOL",
+           "VFD",
+           "V2Pos",
+           "V3Pos",
+           "Diverter",
+           "Gate",
+           "XAY",
+           "XBY",
+
         };
 
         static public string DOL = ":TEMPLATE=$WV_Motor_DOL,ShortDesc";

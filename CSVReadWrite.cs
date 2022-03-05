@@ -10,46 +10,56 @@ namespace SPOT
     public class CSVReadWrite
     {
         private string FilePath = "";
-        private int Line;
-        public List<String> Headers = new List<String>();
+
+        List<CSVModel> objectTemplates = new List<CSVModel>();
+        
         public List<string[]> Objects = new List<string[]>();
 
         public CSVReadWrite(string _FilePath)
         {
             FilePath = _FilePath;
-            Line = -1;
+            
         }
 
 
-        public void Read()
+        public void ReadHeader()
         {
-            using (var reader = new StreamReader(@"C:\Users\isak.skeie\source\repos\SPOT\B8238_DF01.csv"))
+            string path = @"objectTypes\";
+            string[] fileEntries = Directory.GetFiles(path);
+            
+            foreach (string filename in fileEntries)
             {
-                
-                
-                while (!reader.EndOfStream)
+                CSVModel obj = new CSVModel();
+                objectTemplates.Add(obj);
+                using (var reader = new StreamReader(filename))
                 {
-
-                    var line = reader.ReadLine();
-                    var values = line.Split(',');
-                    if (values[0] == ":Tagname")
+                    List<String> Headers = new List<String>();
+                    while (!reader.EndOfStream)
                     {
-                        var _headers = values;
-                        Line = 0;
-                        foreach(string head in _headers)
-                        {
-                            Headers.Add(head);
 
+                        var line = reader.ReadLine();
+                        var values = line.Split(',');
+                        if (values[0] == ":Tagname")
+                        {
+                            var _headers = values;
+                            
+                            foreach (string head in _headers)
+                            {
+                                objectTemplates[objectTemplates.Count - 1].Headers.Add(head);
+
+                            }
+                        }
+                        else if (values[0].Contains('='))
+                        {
+
+                            objectTemplates[objectTemplates.Count-1].type = values[0];
                         }
                     }
-                    else if(Line > -1)
-                    {
-                        Objects.Add(values);
-                    }
-                }
-                
 
-            }
+    
+                    
+                }
+             }
         }
         
 

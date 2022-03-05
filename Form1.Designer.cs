@@ -43,11 +43,15 @@ namespace SPIT
             this.UserInput = new System.Windows.Forms.TextBox();
             this.GenerateCSV = new System.Windows.Forms.Button();
             this.Output = new System.Windows.Forms.Label();
+            this.ObjecType = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.AttributeEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // AttributeEdit
             // 
+            this.AttributeEdit.Controls.Add(this.label3);
+            this.AttributeEdit.Controls.Add(this.ObjecType);
             this.AttributeEdit.Controls.Add(this.label4);
             this.AttributeEdit.Controls.Add(this.label2);
             this.AttributeEdit.Controls.Add(this.label1);
@@ -66,7 +70,7 @@ namespace SPIT
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 86);
+            this.label4.Location = new System.Drawing.Point(11, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 15);
             this.label4.TabIndex = 8;
@@ -76,7 +80,7 @@ namespace SPIT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 57);
+            this.label2.Location = new System.Drawing.Point(23, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 6;
@@ -94,7 +98,7 @@ namespace SPIT
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 83);
+            this.textBox2.Location = new System.Drawing.Point(89, 109);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 3;
@@ -102,7 +106,7 @@ namespace SPIT
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(89, 112);
+            this.button1.Location = new System.Drawing.Point(89, 138);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 24);
             this.button1.TabIndex = 1;
@@ -123,7 +127,7 @@ namespace SPIT
             // 
             this.AttributeType.AllowDrop = true;
             this.AttributeType.FormattingEnabled = true;
-            this.AttributeType.Location = new System.Drawing.Point(89, 54);
+            this.AttributeType.Location = new System.Drawing.Point(89, 80);
             this.AttributeType.Name = "AttributeType";
             this.AttributeType.Size = new System.Drawing.Size(100, 23);
             this.AttributeType.TabIndex = 0;
@@ -167,6 +171,25 @@ namespace SPIT
             this.Output.TabIndex = 4;
             this.Output.Text = "Output";
             // 
+            // ObjecType
+            // 
+            this.ObjecType.FormattingEnabled = true;
+            this.ObjecType.Location = new System.Drawing.Point(89, 51);
+            this.ObjecType.Name = "ObjecType";
+            this.ObjecType.Size = new System.Drawing.Size(100, 23);
+            this.ObjecType.TabIndex = 9;
+            this.ObjecType.SelectedIndexChanged += new System.EventHandler(this.ObjecType_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Object Type";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Area
             // 
             this.AllowDrop = true;
@@ -201,6 +224,8 @@ namespace SPIT
         private System.Windows.Forms.TextBox UserInput;
         private System.Windows.Forms.Button GenerateCSV;
         private System.Windows.Forms.Label Output;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ObjecType;
     }
 }
 

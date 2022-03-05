@@ -44,12 +44,13 @@ namespace SPIT
             AttributeType.Text = "Attribute";
             
             
-
+            //setting comboboxes
             foreach (string opt in initVar.GeneralArea)
             {
                 AttributeType.Items.Add(opt);
             }
-            
+
+            //foreach(string obj in )
             
         }
 
@@ -99,6 +100,16 @@ namespace SPIT
         private void GenerateCSV_Click(object sender, EventArgs e)
         {
             input.CSVCreate();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ObjecType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     
