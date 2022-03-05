@@ -31,6 +31,8 @@ namespace SPIT
         {
             this.components = new System.ComponentModel.Container();
             this.AttributeEdit = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ObjecType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,13 +45,13 @@ namespace SPIT
             this.UserInput = new System.Windows.Forms.TextBox();
             this.GenerateCSV = new System.Windows.Forms.Button();
             this.Output = new System.Windows.Forms.Label();
-            this.ObjecType = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.AtrbN = new System.Windows.Forms.TextBox();
             this.AttributeEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // AttributeEdit
             // 
+            this.AttributeEdit.Controls.Add(this.AtrbN);
             this.AttributeEdit.Controls.Add(this.label3);
             this.AttributeEdit.Controls.Add(this.ObjecType);
             this.AttributeEdit.Controls.Add(this.label4);
@@ -61,11 +63,30 @@ namespace SPIT
             this.AttributeEdit.Controls.Add(this.AttributeType);
             this.AttributeEdit.Location = new System.Drawing.Point(17, 12);
             this.AttributeEdit.Name = "AttributeEdit";
-            this.AttributeEdit.Size = new System.Drawing.Size(206, 196);
+            this.AttributeEdit.Size = new System.Drawing.Size(240, 196);
             this.AttributeEdit.TabIndex = 0;
             this.AttributeEdit.TabStop = false;
             this.AttributeEdit.Text = "AttributeEdit";
             this.AttributeEdit.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Object Type";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // ObjecType
+            // 
+            this.ObjecType.FormattingEnabled = true;
+            this.ObjecType.Location = new System.Drawing.Point(89, 51);
+            this.ObjecType.Name = "ObjecType";
+            this.ObjecType.Size = new System.Drawing.Size(100, 23);
+            this.ObjecType.TabIndex = 9;
+            this.ObjecType.SelectedIndexChanged += new System.EventHandler(this.ObjecType_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -171,24 +192,14 @@ namespace SPIT
             this.Output.TabIndex = 4;
             this.Output.Text = "Output";
             // 
-            // ObjecType
+            // AtrbN
             // 
-            this.ObjecType.FormattingEnabled = true;
-            this.ObjecType.Location = new System.Drawing.Point(89, 51);
-            this.ObjecType.Name = "ObjecType";
-            this.ObjecType.Size = new System.Drawing.Size(100, 23);
-            this.ObjecType.TabIndex = 9;
-            this.ObjecType.SelectedIndexChanged += new System.EventHandler(this.ObjecType_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Object Type";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.AtrbN.AccessibleDescription = "AtrbN";
+            this.AtrbN.Location = new System.Drawing.Point(196, 83);
+            this.AtrbN.Name = "AtrbN";
+            this.AtrbN.Size = new System.Drawing.Size(24, 23);
+            this.AtrbN.TabIndex = 11;
+            this.AtrbN.Text = "#";
             // 
             // Area
             // 
@@ -226,6 +237,7 @@ namespace SPIT
         private System.Windows.Forms.Label Output;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox ObjecType;
+        private System.Windows.Forms.TextBox AtrbN;
     }
 }
 

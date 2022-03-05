@@ -30,7 +30,9 @@ namespace SPIT
 
     static public class initVar
     {
-
+        //Need to add these to XML config file
+        static private string Interlock = "Interlock#Masked.Description";
+        static private string extFault = "ExternalFault#.Description";
         static public List<CSVModel> template = new List<CSVModel>();
         static initVar()
         {
@@ -41,7 +43,7 @@ namespace SPIT
             template = CSVInitRead.objectTemplates;
 
         }
-
+        //Need to add to XML config file
         static public List<String> GeneralArea = new List<String>()
         {
             "Name",
@@ -50,16 +52,23 @@ namespace SPIT
             "EU",
         };
 
-
-  
+        static public List<string> InterAndExt()
+        {
         
-        static public void headers()
+        }
+
+        
+
+    }
+
+    static public class CsvData
+    {
+
+        static public void Data()
         {
             
         }
-
-
-
+        
     }
 
 
