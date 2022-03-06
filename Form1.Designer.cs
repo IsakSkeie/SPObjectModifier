@@ -31,6 +31,7 @@ namespace SPIT
         {
             this.components = new System.ComponentModel.Container();
             this.AttributeEdit = new System.Windows.Forms.GroupBox();
+            this.AtrbN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ObjecType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace SPIT
             this.UserInput = new System.Windows.Forms.TextBox();
             this.GenerateCSV = new System.Windows.Forms.Button();
             this.Output = new System.Windows.Forms.Label();
-            this.AtrbN = new System.Windows.Forms.TextBox();
             this.AttributeEdit.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,16 @@ namespace SPIT
             this.AttributeEdit.TabStop = false;
             this.AttributeEdit.Text = "AttributeEdit";
             this.AttributeEdit.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // AtrbN
+            // 
+            this.AtrbN.AccessibleDescription = "AtrbN";
+            this.AtrbN.Location = new System.Drawing.Point(196, 78);
+            this.AtrbN.Name = "AtrbN";
+            this.AtrbN.Size = new System.Drawing.Size(24, 23);
+            this.AtrbN.TabIndex = 11;
+            this.AtrbN.Text = "#";
+            this.AtrbN.TextChanged += new System.EventHandler(this.AtrbN_TextChanged);
             // 
             // label3
             // 
@@ -191,15 +201,6 @@ namespace SPIT
             this.Output.Size = new System.Drawing.Size(45, 15);
             this.Output.TabIndex = 4;
             this.Output.Text = "Output";
-            // 
-            // AtrbN
-            // 
-            this.AtrbN.AccessibleDescription = "AtrbN";
-            this.AtrbN.Location = new System.Drawing.Point(196, 83);
-            this.AtrbN.Name = "AtrbN";
-            this.AtrbN.Size = new System.Drawing.Size(24, 23);
-            this.AtrbN.TabIndex = 11;
-            this.AtrbN.Text = "#";
             // 
             // Area
             // 

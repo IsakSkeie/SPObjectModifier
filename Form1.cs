@@ -13,15 +13,16 @@ namespace SPIT
 {
     public partial class Area : Form
     {
-        public UserIO input = new UserIO();
         public string ObjectI;
         public string AtributeI;
         public int AtributeIndex;
         public string NewAtbr;
-    
+        public int AtrbNumber;
+        public ObjectUpdate updateTest = new ObjectUpdate();
 
         public Area()
         {
+            
             InitializeComponent();
             WinFormSet();
         }
@@ -75,11 +76,15 @@ namespace SPIT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            input.Objects.Add(ObjectI);
-            UserInput.Text = input.Display();
+         
 
             //Adds input to list of csv string
-            input.ObjectInput(ObjectI, AtributeIndex, NewAtbr);
+
+            if(AtributeI == "Interlock")
+            {
+                updateTest.Interlock(ObjecType.SelectedIndex, ObjectI, AtrbNumber);
+            }
+
             ObjectI += ":" + AtributeI + "->" + NewAtbr + "\r\n";
             
 
@@ -114,6 +119,15 @@ namespace SPIT
         private void ObjecType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AtrbN_TextChanged(object sender, EventArgs e)
+        {
+            if (Int32.TryParse(AtrbN.Text, out AtrbNumber))
+            {
+                AtrbNumber = Int32.Parse(AtrbN.Text);
+            }
+            
         }
     }
     

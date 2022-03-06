@@ -51,6 +51,7 @@ namespace SPIT
             "ToolTip",
             "InterLock",
             "Ext Fault",
+            "Flush InterL.&Ext.",
             "EU",
         };
 

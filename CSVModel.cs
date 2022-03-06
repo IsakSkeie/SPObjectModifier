@@ -11,6 +11,7 @@ namespace SPOT
     {
         public string type = "";
         public List<string> Headers = new List<String>();
+        public List<string> Values = new List<string>();
     }
     public class ObjectUpdate
     {
@@ -20,21 +21,29 @@ namespace SPOT
 
         public void Interlock(int type, string name, int N)
         {
-            template = initVar.template[type].type;
-            header = initVar.template[type].Headers;
             Attributes.Add(name + ',');
             //Fix this hardcoded number
-            for(int i = 0; i < 8; i++)
-                if(i == N)
-                {
-                    Attributes.Add(initVar.AtrbInterlock()[N]);
-                }
+            Attributes.Add(initVar.AtrbInterlock()[N]);
+                
             foreach(var atrb in Attributes)
             {
             Console.WriteLine(atrb);
             }
-            
+        }
+    }
 
+    public static class CSVData
+    {
+        public static List<CSVModel> Data = new List<CSVModel>(); 
+        
+        public static void ObjAdd(int type, List<string> Headers, List<string> Atrb)
+        {
+            CSVModel Instance = new CSVModel();
+            Instance.type = initVar.template[type].type;
+            Instance.Headers = Headers;
+            Instance.Values = Atrb;
+
+            Data.Add(Instance);
         }
     }
 
